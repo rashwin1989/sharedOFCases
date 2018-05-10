@@ -1,0 +1,18 @@
+
+# logs and databases #
+*.log
+
+# emacs backup files #
+*~
+
+# compiled objects directories #
+/Make/linux64GccDPOpt/
+lnInclude/
+*/lnInclude/
+*/Make/linux64GccDPOpt/
+*/*/lnInclude/
+*/*/Make/linux64GccDPOpt/
+
+# compiled source files #
+*.dep
+
