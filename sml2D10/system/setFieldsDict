@@ -1,0 +1,63 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    volScalarFieldValue alpha1 0
+    volScalarFieldValue Y00 0
+    volScalarFieldValue Y01 0
+    volScalarFieldValue Y10 0.75
+    volScalarFieldValue Y11 0.25
+    volScalarFieldValue T0 683
+    volScalarFieldValue T1 683
+);
+
+regions
+(    
+    boxToCell
+    {
+        box (-1 -1 -1) (1 0 1);
+        fieldValues
+        (
+            volScalarFieldValue alpha1 1
+            volScalarFieldValue Y00 0
+            volScalarFieldValue Y01 0
+            volScalarFieldValue Y10 0.75
+            volScalarFieldValue Y11 0.25
+            volScalarFieldValue T0 683
+            volScalarFieldValue T1 683            
+        );
+    }
+
+    boxToCell
+    {
+        box (-1 0 -1) (1 1e-4 1);
+        fieldValues
+        (
+            volScalarFieldValue alpha1 0.5
+            volScalarFieldValue Y00 0
+            volScalarFieldValue Y01 0
+            volScalarFieldValue Y10 0.75
+            volScalarFieldValue Y11 0.25
+            volScalarFieldValue T0 683
+            volScalarFieldValue T1 683
+        );
+    }
+);
+
+
+// ************************************************************************* //

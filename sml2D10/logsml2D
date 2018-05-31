@@ -1,0 +1,554 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.3.0-f5222ca19ce6
+Exec   : plicIsoThermTransLLEFlowFoam
+Date   : May 31 2018
+Time   : 17:25:44
+Host   : "node49"
+PID    : 29955
+Case   : /home/r_ashwin/OpenFOAM/r_ashwin-2.3.0/run/sml2D10
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Disallowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading field p_rgh
+
+Number of species 3
+n_pseudoSpecies_db = 0  n_purespecies_db = 23
+Species indices in database:  11  17  18  
+Species group indices in database:  0  0  0  
+Done initialize UMFPACK
+Initializing field P_thermo
+
+Initializing field Pf_thermo
+
+Reading field alpha1
+
+Initializing field alpha1_old
+
+Calculating field alpha0
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Reading transportProperties
+
+Reading diffusivity D10
+Reading diffusivity D00
+Reading diffusivity D11
+Reading diffusivity D01
+Reading diffusivity D12
+Reading diffusivity D02
+Initializing field D100
+Initializing field D1f00
+Initializing field D000
+Initializing field D0f00
+Initializing field D101
+Initializing field D1f01
+Initializing field D001
+Initializing field D0f01
+Initializing field D102
+Initializing field D1f02
+Initializing field D002
+Initializing field D0f02
+Initializing field D110
+Initializing field D1f10
+Initializing field D010
+Initializing field D0f10
+Initializing field D111
+Initializing field D1f11
+Initializing field D011
+Initializing field D0f11
+Initializing field D112
+Initializing field D1f12
+Initializing field D012
+Initializing field D0f12
+Initializing field D120
+Initializing field D1f20
+Initializing field D020
+Initializing field D0f20
+Initializing field D121
+Initializing field D1f21
+Initializing field D021
+Initializing field D0f21
+Initializing field D122
+Initializing field D1f22
+Initializing field D022
+Initializing field D0f22
+Reading field Y10
+Initializing field x10
+Initializing field c10
+Initializing field C10
+Initializing field C1_old0
+Reading field Y00
+Initializing field x00
+Initializing field c00
+Initializing field C00
+Initializing field C0_old0
+Initializing field C_phAvg0
+Reading field Y11
+Initializing field x11
+Initializing field c11
+Initializing field C11
+Initializing field C1_old1
+Reading field Y01
+Initializing field x01
+Initializing field c01
+Initializing field C01
+Initializing field C0_old1
+Initializing field C_phAvg1
+Reading field Y12
+Initializing field x12
+Initializing field c12
+Initializing field C12
+Initializing field C1_old2
+Reading field Y02
+Initializing field x02
+Initializing field c02
+Initializing field C02
+Initializing field C0_old2
+Initializing field C_phAvg2
+Reading field T1
+Reading field T0
+Tolerance values for plic:
+ALPHA_2PH_MIN:    1e-09
+GRADALPHA_MIN:    0.001
+ALPHA_TOL:        1e-12
+DIST_TOL:         1e-15
+PT_DIST_TOL:      1e-15
+MAX_BRENT_ITERS:  512
+
+
+Reading g
+Calculating field g.h
+
+Initializing field advFlux_Y10
+Initializing field advFlux_Y00
+Initializing field advFlux_Y11
+Initializing field advFlux_Y01
+Initializing field x1f0
+Initializing field x0f0
+Initializing field x1f1
+Initializing field x0f1
+Initializing field x1f2
+Initializing field x0f2
+Initializing field gradf_x10
+Initializing field gradf_x00
+Initializing field diffFlux_Y10
+Initializing field diffFlux_Y00
+Initializing field gradf_x11
+Initializing field gradf_x01
+Initializing field diffFlux_Y11
+Initializing field diffFlux_Y01
+Initializing field gradf_x12
+Initializing field gradf_x02
+Initializing field diffFlux_Y12
+Initializing field diffFlux_Y02
+Initializing field gradf_T1
+Initializing field gradf_T0
+Initializing field xs10
+Initializing field Ys10
+Initializing field xs00
+Initializing field Ys00
+Initializing field Js10
+Initializing field Js00
+Initializing field mS10
+Initializing field xs11
+Initializing field Ys11
+Initializing field xs01
+Initializing field Ys01
+Initializing field Js11
+Initializing field Js01
+Initializing field mS11
+Initializing field xs12
+Initializing field Ys12
+Initializing field xs02
+Initializing field Ys02
+Initializing field Js12
+Initializing field Js02
+Initializing field mS12
+Initializing field Ts
+Initializing field JsTot
+Initializing field mS1Tot
+Initializing field Qs
+Initializing field alphaS1
+Initializing field alphaS0
+Initializing field pS
+Done correcting thermo and transport props
+DICPCG:  Solving for pcorr, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0, global = 0, cumulative = 0
+Courant Number mean: 0 max: 0
+Diffusion Courant Number mean: 0.00044303673828 max: 0.044303673828
+
+Starting time loop
+
+Courant Number mean: 0 max: 0
+Diffusion Courant Number mean: 0.00044303673828 max: 0.044303673828
+Time = 0.001
+
+Outer corrector 1
+Calculating two-phase advective fluxes
+ExecutionTime = 0.04 s
+alpha1:  avg = 0.55  min = 0  undershoot = 0  max = 1  overshoot = 0
+alpha1 after clipping:  avg = 0.55
+ExecutionTime = 0.04 s
+
+C1[0]:  avg = 381.550497659
+C1[0] after clipping:  avg = 381.550497659
+C0[0]:  avg = 0
+C0[0] after clipping:  avg = 0
+C1[1]:  avg = 127.18349922
+C1[1] after clipping:  avg = 127.18349922
+C0[1]:  avg = 0
+C0[1] after clipping:  avg = 0
+Done YAdvEqns
+ExecutionTime = 0.04 s
+
+ExecutionTime = 0.04 s
+
+Done correcting thermo and transport props
+ExecutionTime = 0.04 s
+
+Done gradients and face interpolations for diffusion
+ExecutionTime = 0.04 s
+
+Phase-1 Ci = 381.550497659
+Min(C1i) = 0  Max(C1i) = 693.728177562
+Min(Y1i) = 0  Max(Y1i) = 0.75
+C1i undershoot = 0  C1i overshoot = 0
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 381.550497659
+Min(C1i) = 0  Max(C1i) = 693.728177562
+Min(Y1i) = 0  Max(Y1i) = 0.75
+Phase-0 Ci = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Phase-1 Ci = 127.18349922
+Min(C1i) = 0  Max(C1i) = 231.242725854
+Min(Y1i) = 0  Max(Y1i) = 0.25
+C1i undershoot = 0  C1i overshoot = 0
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 127.18349922
+Min(C1i) = 0  Max(C1i) = 231.242725854
+Min(Y1i) = 0  Max(Y1i) = 0.25
+Phase-0 Ci = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Done YDiffEqns
+ExecutionTime = 0.05 s
+
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+	GSL steps 3
+x1: 1.6631859634e-05 1.2500000000e-09 9.9998336689e-01 
+x2: 1.6631221217e-05 1.2499201600e-09 9.9998336753e-01 
+Phase-1 C[0] = 380.545595621
+Min(C1i) = 0  Max(C1i) = 693.728177562
+Min(Y1i) = 0  Max(Y1i) = 0.75
+Phase-0 C[0] = 1.00490203738
+Min(C0i) = 0  Max(C0i) = 22.9920777313
+Min(Y0i) = 0  Max(Y0i) = 0.102858375093
+Phase-1 C[1] = 127.18349922
+Min(C1i) = 0  Max(C1i) = 231.242725854
+Min(Y1i) = 0  Max(Y1i) = 0.25
+Phase-0 C[1] = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Phase-1 C[2] = 2.4117087175
+Min(C1i) = 0  Max(C1i) = 24.117087175
+Min(Y1i) = 0  Max(Y1i) = 1
+Phase-0 C[2] = 98.1774262919
+Min(C0i) = 0  Max(C0i) = 223.531411132
+Min(Y0i) = 0.897141624907  Max(Y0i) = 1
+Done Interfacial Species Transfer
+ExecutionTime = 0.08 s
+
+ExecutionTime = 0.08 s
+
+Done correcting thermo and transport props
+ExecutionTime = 0.09 s
+
+Done gradients and face interpolations for diffusion
+ExecutionTime = 0.09 s
+
+Phase-1 Ci = 380.545595621
+Min(C1i) = 0  Max(C1i) = 693.728177562
+Min(Y1i) = 0  Max(Y1i) = 0.75
+C1i undershoot = 0  C1i overshoot = 0
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 380.545595621
+Min(C1i) = 0  Max(C1i) = 693.728177562
+Min(Y1i) = 0  Max(Y1i) = 0.75
+Phase-0 Ci = 1.00490203738
+Min(C0i) = 0  Max(C0i) = 22.9920777313
+Min(Y0i) = 0  Max(Y0i) = 0.102858375093
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 1.00490203738
+Min(C0i) = 0  Max(C0i) = 22.9920777313
+Min(Y0i) = 0  Max(Y0i) = 0.102858375093
+Phase-1 Ci = 127.18349922
+Min(C1i) = 0  Max(C1i) = 231.242725854
+Min(Y1i) = 0  Max(Y1i) = 0.25
+C1i undershoot = 0  C1i overshoot = 0
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 127.18349922
+Min(C1i) = 0  Max(C1i) = 231.242725854
+Min(Y1i) = 0  Max(Y1i) = 0.25
+Phase-0 Ci = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Done YDiffEqns
+ExecutionTime = 0.1 s
+
+ExecutionTime = 0.1 s
+
+Min(rho) = 223.531411132  Max(rho) = 924.970903415
+Min(mu) = 3.5e-05  Max(mu) = 0.0007
+Min(muf) = 3.55977336856e-05  Max(muf) = 0.000427283199745
+Pressure corrector 1
+DICPCG:  Solving for p_rgh, Initial residual = 0.999999675014, Final residual = 8.88427937772e-10, No Iterations 19
+time step continuity errors : sum local = 4.2278679247e-09, global = -1.19696585124e-10, cumulative = -1.19696585124e-10
+Min(U) = (-1.26822092106e-05 -1.50132493931e-06 0)  Max(U) = (1.28617935725e-05 0.00500270798531 0)
+Min(p_rgh) = 30000000  Max(p_rgh) = 30000000.4807
+ExecutionTime = 0.1 s
+Pressure corrector 2
+DICPCG:  Solving for p_rgh, Initial residual = 0.0119100539297, Final residual = 4.03285192098e-10, No Iterations 17
+time step continuity errors : sum local = 4.2103272988e-09, global = -1.02831904483e-10, cumulative = -2.22528489607e-10
+Min(U) = (-3.26404024982e-06 -4.71018071838e-06 0)  Max(U) = (3.50188839504e-06 0.00591681921534 0)
+Min(p_rgh) = 30000000  Max(p_rgh) = 30000000.5498
+ExecutionTime = 0.1 s
+
+
+Courant Number mean: 0.0222961430618 max: 0.0497071371198
+Diffusion Courant Number mean: 0.00044303673828 max: 0.044303673828
+Time = 0.002
+
+Outer corrector 1
+Calculating two-phase advective fluxes
+ExecutionTime = 0.11 s
+alpha1:  avg = 0.56084765044  min = 0  undershoot = 0  max = 1  overshoot = 2.22044604925e-15
+alpha1 after clipping:  avg = 0.56084765044
+ExecutionTime = 0.11 s
+
+C1[0]:  avg = 380.545490628
+C1[0] after clipping:  avg = 380.545490628
+C0[0]:  avg = 1.00490154826
+C0[0] after clipping:  avg = 1.00490154826
+C1[1]:  avg = 127.183464038
+C1[1] after clipping:  avg = 127.183464038
+C0[1]:  avg = 0
+C0[1] after clipping:  avg = 0
+Done YAdvEqns
+ExecutionTime = 0.11 s
+
+ExecutionTime = 0.11 s
+
+Done correcting thermo and transport props
+ExecutionTime = 0.12 s
+
+Done gradients and face interpolations for diffusion
+ExecutionTime = 0.12 s
+
+Phase-1 Ci = 380.545490628
+Min(C1i) = 0  Max(C1i) = 693.728179979
+Min(Y1i) = 0  Max(Y1i) = 0.750000002614
+C1i undershoot = 0  C1i overshoot = 2.41757368258e-06
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 380.545490628
+Min(C1i) = 0  Max(C1i) = 693.728179979
+Min(Y1i) = 0  Max(Y1i) = 0.750000002614
+Phase-0 Ci = 1.00490154826
+Min(C0i) = 0  Max(C0i) = 22.7706245539
+Min(Y0i) = 0  Max(Y0i) = 0.10039591847
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 1.00490154826
+Min(C0i) = 0  Max(C0i) = 22.7706245539
+Min(Y0i) = 0  Max(Y0i) = 0.10039591847
+Phase-1 Ci = 127.183464038
+Min(C1i) = 0  Max(C1i) = 231.24272666
+Min(Y1i) = 0  Max(Y1i) = 0.250000000871
+C1i undershoot = 0  C1i overshoot = 8.05857922614e-07
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 127.183464038
+Min(C1i) = 0  Max(C1i) = 231.24272666
+Min(Y1i) = 0  Max(Y1i) = 0.250000000871
+Phase-0 Ci = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Done YDiffEqns
+ExecutionTime = 0.12 s
+
+	GSL steps 30
+x1: 3.9244359187e-08 2.4803445617e-02 9.7519651514e-01 
+x2: 3.9243718606e-08 2.4802779061e-02 9.7519718170e-01 
+	GSL steps 27
+x1: 3.9275807965e-08 2.4803446600e-02 9.7519651412e-01 
+x2: 3.9275166870e-08 2.4802780044e-02 9.7519718068e-01 
+	GSL steps 30
+x1: 3.9307248939e-08 2.4803445001e-02 9.7519651569e-01 
+x2: 3.9306607331e-08 2.4802778445e-02 9.7519718225e-01 
+	GSL steps 31
+x1: 3.9286289898e-08 2.4803446594e-02 9.7519651412e-01 
+x2: 3.9285648633e-08 2.4802780038e-02 9.7519718068e-01 
+	GSL steps 30
+x1: 3.9317730615e-08 2.4803444921e-02 9.7519651576e-01 
+x2: 3.9317088836e-08 2.4802778365e-02 9.7519718232e-01 
+	GSL steps 29
+x1: 3.9307251851e-08 2.4803445968e-02 9.7519651472e-01 
+x2: 3.9306610243e-08 2.4802779412e-02 9.7519718128e-01 
+	GSL steps 30
+x1: 3.9275805444e-08 2.4803445770e-02 9.7519651495e-01 
+x2: 3.9275164349e-08 2.4802779214e-02 9.7519718151e-01 
+	GSL steps 28
+x1: 3.9223396430e-08 2.4803445977e-02 9.7519651480e-01 
+x2: 3.9222756191e-08 2.4802779421e-02 9.7519718136e-01 
+	GSL steps 28
+x1: 3.9223395823e-08 2.4803445784e-02 9.7519651499e-01 
+x2: 3.9222755584e-08 2.4802779229e-02 9.7519718155e-01 
+	GSL steps 33
+x1: 3.9191955113e-08 2.4803447474e-02 9.7519651333e-01 
+x2: 3.9191315387e-08 2.4802780918e-02 9.7519717989e-01 
+Phase-1 C[0] = 378.634236905
+Min(C1i) = 0  Max(C1i) = 693.728179979
+Min(Y1i) = 0  Max(Y1i) = 0.75
+Phase-0 C[0] = 2.91615527086
+Min(C0i) = 0  Max(C0i) = 59.1540038206
+Min(Y0i) = 0  Max(Y0i) = 0.260798899712
+Phase-1 C[1] = 127.183464038
+Min(C1i) = 0  Max(C1i) = 231.24272666
+Min(Y1i) = 0  Max(Y1i) = 0.25355652352
+Phase-0 C[1] = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Phase-1 C[2] = 2.274692839
+Min(C1i) = 0  Max(C1i) = 22.6699396938
+Min(Y1i) = 0  Max(Y1i) = 1
+Phase-0 C[2] = 97.2436423914
+Min(C0i) = 0  Max(C0i) = 223.531411132
+Min(Y0i) = 0.739201100288  Max(Y0i) = 1
+Done Interfacial Species Transfer
+ExecutionTime = 0.66 s
+
+ExecutionTime = 0.66 s
+
+Done correcting thermo and transport props
+ExecutionTime = 0.67 s
+
+Done gradients and face interpolations for diffusion
+ExecutionTime = 0.67 s
+
+Phase-1 Ci = 378.634236905
+Min(C1i) = 0  Max(C1i) = 693.728179979
+Min(Y1i) = 0  Max(Y1i) = 0.750000002614
+C1i undershoot = 0  C1i overshoot = 0
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 378.634236905
+Min(C1i) = 0  Max(C1i) = 693.728179979
+Min(Y1i) = 0  Max(Y1i) = 0.750000002614
+Phase-0 Ci = 2.91615527086
+Min(C0i) = 0  Max(C0i) = 59.1540038206
+Min(Y0i) = 0  Max(Y0i) = 0.260798899712
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 2.91615527086
+Min(C0i) = 0  Max(C0i) = 59.1540038206
+Min(Y0i) = 0  Max(Y0i) = 0.260798899712
+Phase-1 Ci = 127.183464038
+Min(C1i) = 0  Max(C1i) = 231.24272666
+Min(Y1i) = 0  Max(Y1i) = 0.253546830288
+C1i undershoot = 0  C1i overshoot = 0
+Y1i undershoot = 0  Y1i overshoot = 0
+Phase-1 Ci after clipping = 127.183464038
+Min(C1i) = 0  Max(C1i) = 231.24272666
+Min(Y1i) = 0  Max(Y1i) = 0.253546830288
+Phase-0 Ci = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+C0i undershoot = 0  C0i overshoot = 0
+Y0i undershoot = 0  Y0i overshoot = 0
+Phase-0 Ci after clipping = 0
+Min(C0i) = 0  Max(C0i) = 0
+Min(Y0i) = 0  Max(Y0i) = 0
+Done YDiffEqns
+ExecutionTime = 0.68 s
+
+ExecutionTime = 0.68 s
+
+Min(rho) = 223.423166225  Max(rho) = 924.970903415
+Min(mu) = 3.5e-05  Max(mu) = 0.0007
+Min(muf) = 3.476983875e-05  Max(muf) = 0.000427283199745
+Pressure corrector 1
+DICPCG:  Solving for p_rgh, Initial residual = 0.0888207212415, Final residual = 6.68463610386e-10, No Iterations 18
+time step continuity errors : sum local = 4.23770424659e-09, global = 1.80898307601e-11, cumulative = -2.04438658846e-10
+Min(U) = (-8.26787636725e-06 -0.000216467326543 0)  Max(U) = (8.23609768688e-06 0.00355496330921 0)
+Min(p_rgh) = 29999999.7268  Max(p_rgh) = 30000000
+ExecutionTime = 0.68 s
+Pressure corrector 2
+DICPCG:  Solving for p_rgh, Initial residual = 0.0148085364345, Final residual = 6.25133181583e-10, No Iterations 17
+time step continuity errors : sum local = 4.05782124044e-09, global = 1.74094600016e-10, cumulative = -3.03440588308e-11
+Min(U) = (-4.59651303295e-06 -0.000218978522477 0)  Max(U) = (4.52320951589e-06 0.00287864995957 0)
+Min(p_rgh) = 29999999.6769  Max(p_rgh) = 30000000
+ExecutionTime = 0.68 s
+
+
+End
+
