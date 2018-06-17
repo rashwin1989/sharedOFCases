@@ -1,0 +1,18 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+set -x
+
+blockMesh
+checkMesh
+
+cd 0
+cp alpha1.org alpha1
+cp Y00.org Y00
+cp Y10.org Y10
+cp T1.org T1
+cp T0.org T0
+
+cd ..
+setFields
+
+# ----------------------------------------------------------------- end-of-file
