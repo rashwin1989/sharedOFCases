@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#$ -pe singlenode 8
+
+#$ -l long
+
+#$ -A r_ashwin
+#$ -l h_rt=100008:00:00
+
+
+#$ -N base2_plicBi
+#$ -o df.out
+#$ -e df.err
+#$ -j y
+
+#$ -V
+#$ -cwd
+
+# export MPICH2_ROOT=/opt/mpich2-1.0.8/
+export PATH=$MPICH2_ROOT/bin:$PATH
+export MPD_CON_EXT="sge_$JOB_ID.$TASK_ID"
+
+echo "Got $NSLOTS slots."
+# The order of arguments is important. First global, then local options.
+cat $TMPDIR/machines
+
+/home/aniketsp/OpenFOAM/ThirdParty-2.3.0/platforms/linux64Gcc/openmpi-1.6.5/bin/mpirun -n 8 plicBinIsoThermTransLLEFlowFoam -parallel >& logdf
