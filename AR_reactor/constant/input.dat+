@@ -1,0 +1,12 @@
+n_species:    2
+
+Species:      11     18
+groups:       0      0 
+
+--------------------------------------------------------
+End of input file
+--------------------------------------------------------
+NOTES:
+1) water must be the last species in the system (idx 53, group 2)
+2) R, rs0 unit m, T0, T1 unit K
+--------------------------------------------------------
