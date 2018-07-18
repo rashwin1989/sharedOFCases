@@ -1,0 +1,25 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.3.0-f5222ca19ce6
+Exec   : calckij
+Date   : Jul 18 2018
+Time   : 11:46:02
+Host   : "pharos"
+PID    : 10304
+Case   : /home/r_ashwin/OpenFOAM/r_ashwin-2.3.0/run/calckij
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Disallowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+n_pseudoSpecies_db = 0  n_purespecies_db = 23
+Species indices in database:  11  18  
+Species group indices in database:  0  0  
+End
+
