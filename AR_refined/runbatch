@@ -11,7 +11,7 @@
 #$ -l h_rt=10008:00:00
 
 
-#$ -N AR_core
+#$ -N AR_ref
 #$ -o g6.out
 #$ -e g6.err
 #$ -j y

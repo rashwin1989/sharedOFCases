@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#$ -pe singlenode 48
+
+#$ -l long
+
+#$ -A aniketsp
+#$ -M aniketps@mit.edu
+##$ -m ae
+##$ -l h_rt=1732000
+#$ -l h_rt=10008:00:00
+
+
+#$ -N AR_refinedHST
+#$ -o g6.out
+#$ -e g6.err
+#$ -j y
+
+#$ -V
+#$ -cwd
+
+# export MPICH2_ROOT=/opt/mpich2-1.0.8/
+export PATH=$MPICH2_ROOT/bin:$PATH
+export MPD_CON_EXT="sge_$JOB_ID.$TASK_ID"
+
+echo "Got $NSLOTS slots."
+# The order of arguments is important. First global, then local options.
+cat $TMPDIR/machines
+
+/home/aniketsp/OpenFOAM/ThirdParty-2.3.0/platforms/linux64Gcc/openmpi-1.6.5/bin/mpirun -n 48 plicBinIsoThermTransLLEFlowFoam -parallel >& logru46
