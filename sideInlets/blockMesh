@@ -1,0 +1,209 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+meshParameters
+{
+    dWater     13;           // Diameter of water inlet in mm
+    dOil       5;            // Diameter of each oil inlet in mm
+    l1         20;           // Distance of oil inlet bottom edge from reactor floor
+    l2         215;          // Distance of oil inlet top edge from reactor outlet
+    l3         13.5;         // Distance of water inlet left edge from reactor left wall, inlet is symmetric
+    resolution 0.25;         // Size of grid cell, mm
+    dReactor   40;           // Reactor diameter, mm
+    lReactor   240;          // Reactor length, mm
+    oilRun     3;            // L/D ratio of oil runners
+    waterRun   3;            // L/D ratio of water runner
+}
+
+convertToMeters 0.001;
+
+nl1        #calc "$:meshParameters.l1/$:meshParameters.resolution";
+nl2        #calc "$:meshParameters.l2/$:meshParameters.resolution";
+nl3        #calc "$:meshParameters.l3/$:meshParameters.resolution";
+ndOil      #calc "$:meshParameters.dOil/$:meshParameters.resolution";
+ndWater    #calc "$:meshParameters.dWater/$:meshParameters.resolution";
+nlOil      #calc "$:meshParameters.oilRun*$:meshParameters.dOil/$:meshParameters.resolution";
+nlWater    #calc "$:meshParameters.waterRun*$:meshParameters.dWater/$:meshParameters.resolution";
+
+x1   #calc "-20 + $:meshParameters.l3";
+x4   #calc "$x1 + $:meshParameters.dWater";
+x7   #calc "20 + $:meshParameters.dOil*$:meshParameters.oilRun";
+x20  #calc "-20 - $:meshParameters.dOil*$:meshParameters.oilRun";
+y2   #calc "0 - $:meshParameters.dWater*$:meshParameters.waterRun";
+y6   #calc "0 + $:meshParameters.l1";
+y8   #calc "$y6 + $:meshParameters.dOil";
+y14  #calc "$y8 + $:meshParameters.l2";
+
+vertices
+(
+    (-20  0    0)  //0
+    ($x1  0    0)  //1
+    ($x1  $y2  0)  //2
+    ($x4  $y2  0)  //3
+    ($x4  0    0)  //4
+    (20   0    0)  //5
+    (20   $y6  0)  //6
+    ($x7  $y6  0)  //7
+    ($x7  $y8  0)  //8
+    (20   $y8  0)  //9
+    ($x4  $y8  0)  //10
+    ($x4  $y6  0)  //11
+    ($x1  $y6  0)  //12
+    ($x1  $y8  0)  //13
+    (20   $y14 0)  //14
+    ($x4  $y14 0)  //15
+    ($x1  $y14 0)  //16
+    (-20  $y14 0)  //17
+    (-20  $y8  0)  //18
+    ($x20 $y8  0)  //19
+    ($x20 $y6  0)  //20
+    (-20  $y6  0)  //21
+    // Extrude in +z
+    (-20  0    1)  //22
+    ($x1  0    1)  //23
+    ($x1  $y2  1)  //24
+    ($x4  $y2  1)  //25
+    ($x4  0    1)  //26
+    (20   0    1)  //27
+    (20   $y6  1)  //28
+    ($x7  $y6  1)  //29
+    ($x7  $y8  1)  //30
+    (20   $y8  1)  //31
+    ($x4  $y8  1)  //32
+    ($x4  $y6  1)  //33
+    ($x1  $y6  1)  //34
+    ($x1  $y8  1)  //35
+    (20   $y14 1)  //36
+    ($x4  $y14 1)  //37
+    ($x1  $y14 1)  //38
+    (-20  $y14 1)  //39
+    (-20  $y8  1)  //40
+    ($x20 $y8  1)  //41
+    ($x20 $y6  1)  //42
+    (-20  $y6  1)  //43
+);
+
+blocks
+(
+    //water inlet block
+    hex (2 3 4 1 24 25 26 23)         ($ndWater $nlWater 1)   simpleGrading (1 1 1)
+
+    // oil inlet block left
+    hex (20 21 18 19 42 43 40 41)     ($nlOil $ndOil 1)        simpleGrading (1 1 1)
+
+    // oil inlet block right
+    hex (6 7 8 9 28 29 30 31)         ($nlOil $ndOil 1)        simpleGrading (1 1 1)
+ 
+    // main reactor block 11 - from (top - 1)(left - 1) block
+    hex (18 13 16 17 40 35 38 39)     ($nl3 $nl2 1)      simpleGrading (1 1 1)
+
+    // main reactor block 12 - (top - 1)(middle - 2) block
+    hex (13 10 15 16 35 32 37 38)     ($ndWater $nl2 1)    simpleGrading (1 1 1)
+
+    // main reactor block 13
+    hex (10 9 14 15 32 31 36 37)      ($nl3 $nl2 1)      simpleGrading (1 1 1)
+
+    // main reactor block 21
+    hex (21 12 13 18 43 34 35 40)     ($nl3 $ndOil 1)  simpleGrading (1 1 1)
+
+    // main reactor block 22
+    hex (12 11 10 13 34 33 32 35)     ($ndWater $ndOil 1)      simpleGrading (1 1 1)
+
+    // main reactor block 23
+    hex (11 6 9 10 33 28 31 32)       ($nl3 $ndOil 1)    simpleGrading (1 1 1)
+
+    // main reactor block 31
+    hex (0 1 12 21 22 23 34 43)       ($nl3 $nl1 1)      simpleGrading (1 1 1)
+
+    // main reactor block 32
+    hex (1 4 11 12 23 26 33 34)       ($ndWater $nl1 1)      simpleGrading (1 1 1)
+
+    // main reactor block 33
+    hex (4 5 6 11 26 27 28 33)        ($nl3 $nl1 1)      simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    waterInlet
+    {
+        type patch;
+        faces
+        (
+            (3 25 24 2)
+        );
+    }
+
+    oilInletLeft
+    {
+        type patch;
+        faces
+        (
+            (42 41 19 20)
+        );
+    }
+
+    oilInletRight
+    {
+        type patch;
+        faces
+        (
+            (7 8 30 29)
+        );
+    }
+
+    mainReactorOutlet
+    {
+        type patch;
+        faces
+        (
+            (39 38 16 17)
+            (38 37 15 16)
+            (37 36 14 15)
+        );
+    }
+
+    wall
+    {
+       type patch;
+       faces
+       (
+           (39 17 18 40)
+           (41 40 18 19)
+           (43 42 20 21)
+           (43 21 0 22)
+           (23 22 0 1)
+           (23 1 2 24)
+           (25 3 4 26)
+           (27 26 4 5)
+           (27 5 6 28)
+           (29 28 6 7)
+           (31 30 8 9)
+           (31 9 14 36)
+       );
+     }
+
+    // Default faces: frontAndBack
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
