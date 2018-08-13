@@ -1,0 +1,443 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.3.0-f5222ca19ce6
+Exec   : decomposePar
+Date   : Aug 10 2018
+Time   : 18:40:50
+Host   : "pharos"
+PID    : 25639
+Case   : /home/aniketsp/OpenFOAM/aniketsp-2.3.0/run/AramcoGeometries/AR_cylReactor
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+Selecting decompositionMethod simple
+
+Finished decomposition in 0.06 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 1612
+    Number of faces shared with processor 1 = 81
+    Number of processor patches = 1
+    Number of processor faces = 81
+    Number of boundary faces = 3413
+
+Processor 1
+    Number of cells = 1612
+    Number of faces shared with processor 0 = 81
+    Number of faces shared with processor 2 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 2
+    Number of cells = 1612
+    Number of faces shared with processor 1 = 81
+    Number of faces shared with processor 3 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 3
+    Number of cells = 1612
+    Number of faces shared with processor 2 = 81
+    Number of faces shared with processor 4 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 4
+    Number of cells = 1612
+    Number of faces shared with processor 3 = 81
+    Number of faces shared with processor 5 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3245
+
+Processor 5
+    Number of cells = 1612
+    Number of faces shared with processor 4 = 81
+    Number of faces shared with processor 6 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 6
+    Number of cells = 1612
+    Number of faces shared with processor 5 = 81
+    Number of faces shared with processor 7 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 7
+    Number of cells = 1612
+    Number of faces shared with processor 6 = 81
+    Number of faces shared with processor 8 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 8
+    Number of cells = 1612
+    Number of faces shared with processor 7 = 81
+    Number of faces shared with processor 9 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3244
+
+Processor 9
+    Number of cells = 1611
+    Number of faces shared with processor 8 = 81
+    Number of faces shared with processor 10 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 10
+    Number of cells = 1611
+    Number of faces shared with processor 9 = 81
+    Number of faces shared with processor 11 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 11
+    Number of cells = 1611
+    Number of faces shared with processor 10 = 81
+    Number of faces shared with processor 12 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3243
+
+Processor 12
+    Number of cells = 1611
+    Number of faces shared with processor 11 = 81
+    Number of faces shared with processor 13 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 13
+    Number of cells = 1611
+    Number of faces shared with processor 12 = 81
+    Number of faces shared with processor 14 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 14
+    Number of cells = 1611
+    Number of faces shared with processor 13 = 81
+    Number of faces shared with processor 15 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 15
+    Number of cells = 1611
+    Number of faces shared with processor 14 = 81
+    Number of faces shared with processor 16 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 16
+    Number of cells = 1611
+    Number of faces shared with processor 15 = 81
+    Number of faces shared with processor 17 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 17
+    Number of cells = 1611
+    Number of faces shared with processor 16 = 81
+    Number of faces shared with processor 18 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 18
+    Number of cells = 1611
+    Number of faces shared with processor 17 = 81
+    Number of faces shared with processor 19 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3243
+
+Processor 19
+    Number of cells = 1611
+    Number of faces shared with processor 18 = 81
+    Number of faces shared with processor 20 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 20
+    Number of cells = 1611
+    Number of faces shared with processor 19 = 81
+    Number of faces shared with processor 21 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 21
+    Number of cells = 1611
+    Number of faces shared with processor 20 = 81
+    Number of faces shared with processor 22 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 22
+    Number of cells = 1611
+    Number of faces shared with processor 21 = 81
+    Number of faces shared with processor 23 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 23
+    Number of cells = 1611
+    Number of faces shared with processor 22 = 81
+    Number of faces shared with processor 24 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 24
+    Number of cells = 1611
+    Number of faces shared with processor 23 = 81
+    Number of faces shared with processor 25 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 25
+    Number of cells = 1611
+    Number of faces shared with processor 24 = 81
+    Number of faces shared with processor 26 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 26
+    Number of cells = 1611
+    Number of faces shared with processor 25 = 81
+    Number of faces shared with processor 27 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3243
+
+Processor 27
+    Number of cells = 1611
+    Number of faces shared with processor 26 = 81
+    Number of faces shared with processor 28 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 28
+    Number of cells = 1611
+    Number of faces shared with processor 27 = 81
+    Number of faces shared with processor 29 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 29
+    Number of cells = 1611
+    Number of faces shared with processor 28 = 81
+    Number of faces shared with processor 30 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 30
+    Number of cells = 1611
+    Number of faces shared with processor 29 = 81
+    Number of faces shared with processor 31 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 31
+    Number of cells = 1611
+    Number of faces shared with processor 30 = 81
+    Number of faces shared with processor 32 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 32
+    Number of cells = 1611
+    Number of faces shared with processor 31 = 81
+    Number of faces shared with processor 33 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 33
+    Number of cells = 1611
+    Number of faces shared with processor 32 = 81
+    Number of faces shared with processor 34 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3243
+
+Processor 34
+    Number of cells = 1611
+    Number of faces shared with processor 33 = 81
+    Number of faces shared with processor 35 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 35
+    Number of cells = 1611
+    Number of faces shared with processor 34 = 81
+    Number of faces shared with processor 36 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 36
+    Number of cells = 1611
+    Number of faces shared with processor 35 = 81
+    Number of faces shared with processor 37 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 37
+    Number of cells = 1611
+    Number of faces shared with processor 36 = 81
+    Number of faces shared with processor 38 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 38
+    Number of cells = 1611
+    Number of faces shared with processor 37 = 81
+    Number of faces shared with processor 39 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 39
+    Number of cells = 1611
+    Number of faces shared with processor 38 = 81
+    Number of faces shared with processor 40 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 40
+    Number of cells = 1611
+    Number of faces shared with processor 39 = 81
+    Number of faces shared with processor 41 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3243
+
+Processor 41
+    Number of cells = 1611
+    Number of faces shared with processor 40 = 81
+    Number of faces shared with processor 42 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 42
+    Number of cells = 1611
+    Number of faces shared with processor 41 = 81
+    Number of faces shared with processor 43 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 43
+    Number of cells = 1611
+    Number of faces shared with processor 42 = 81
+    Number of faces shared with processor 44 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 44
+    Number of cells = 1611
+    Number of faces shared with processor 43 = 81
+    Number of faces shared with processor 45 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 45
+    Number of cells = 1611
+    Number of faces shared with processor 44 = 81
+    Number of faces shared with processor 46 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 46
+    Number of cells = 1611
+    Number of faces shared with processor 45 = 81
+    Number of faces shared with processor 47 = 81
+    Number of processor patches = 2
+    Number of processor faces = 162
+    Number of boundary faces = 3242
+
+Processor 47
+    Number of cells = 1611
+    Number of faces shared with processor 46 = 81
+    Number of processor patches = 1
+    Number of processor faces = 81
+    Number of boundary faces = 3323
+
+Number of processor faces = 3807
+Max number of cells = 1612 (0.0504286434695% above average 1611.1875)
+Max number of processor patches = 2 (2.12765957447% above average 1.95833333333)
+Max number of faces between processors = 162 (2.12765957447% above average 158.625)
+
+Time = 0
+
+
+--> FOAM FATAL IO ERROR: 
+Cannot find patchField entry for front
+
+file: /home/aniketsp/OpenFOAM/aniketsp-2.3.0/run/AramcoGeometries/AR_cylReactor/0/Y10.boundaryField from line 25 to line 53.
+
+    From function GeometricField<Type, PatchField, GeoMesh>::GeometricBoundaryField::readField(const DimensionedField<Type, GeoMesh>&, const dictionary&)
+    in file /home/aniketsp/OpenFOAM/OpenFOAM-2.3.0/src/OpenFOAM/lnInclude/GeometricBoundaryField.C at line 209.
+
+FOAM exiting
+

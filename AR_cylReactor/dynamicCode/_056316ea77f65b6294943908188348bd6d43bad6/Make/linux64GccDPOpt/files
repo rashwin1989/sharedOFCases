@@ -1,0 +1,9 @@
+# 1 "files"
+# 1 "<command-line>"
+# 1 "files"
+
+
+
+codeStreamTemplate.C
+
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libcodeStream_056316ea77f65b6294943908188348bd6d43bad6

@@ -1,0 +1,75 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     plicBinIsoThermTransLLEFlowFoam; //plicAdvDiffIstFlowFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         1.8;
+
+deltaT         1e-5;
+
+writeControl    adjustableRunTime;
+//writeControl    timeStep;
+
+writeInterval   0.03;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  12;
+
+writeCompression uncompressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  yes;
+
+maxCo           0.5;
+maxDiffCo       0.5;
+
+maxDeltaT       0.01;
+/*
+*************************************************************************** 
+For post-processing scripts calcIst and calcIstAxial                     */
+
+caseName        "_core";
+
+dx              0.00025;
+dy              0.00025;
+dz              0.001;
+
+yTop            0.240;
+yBottom         0;
+xLeft           -0.020;
+xRight          0.020
+
+tSteady         1;
+
+movingAvgerageFactor   0.5;
+
+// ************************************************************************* //
+// ************************************************************************* //

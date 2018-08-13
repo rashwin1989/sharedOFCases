@@ -1,0 +1,10 @@
+# 1 "options"
+# 1 "<command-line>"
+# 1 "options"
+
+
+
+EXE_INC = -g 
+
+
+LIB_LIBS = -lOpenFOAM 

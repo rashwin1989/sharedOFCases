@@ -1,0 +1,187 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+meshParameters
+{
+    rWater     1.75;         // Diameter of water inlet in mm
+    dOil       2.25;         // Diameter of each oil inlet in mm
+    l1         8;            // Distance of left oil inlet left edge from left end of reactor
+    resolution 0.25;         // Size of grid cell, mm
+    rReactor   20;           // Reactor diameter, mm. Change x1 defination below if != 40
+    lReactor   240;          // Reactor length, mm
+    oilRun     3;            // L/D ratio of oil runners
+    waterRun   3;            // L/D ratio of water runner
+}
+
+
+convertToMeters 0.001;
+
+nl1        #calc "$:meshParameters.l1/$:meshParameters.resolution";
+ndOil      #calc "$:meshParameters.dOil/$:meshParameters.resolution";
+nrWater    #calc "$:meshParameters.rWater/$:meshParameters.resolution";
+nrReactor  #calc "$:meshParameters.rReactor/$:meshParameters.resolution";
+nlReactor  #calc "$:meshParameters.lReactor/$:meshParameters.resolution";
+nlOil      #calc "$:meshParameters.oilRun*$:meshParameters.dOil/$:meshParameters.resolution";
+nlWater    #calc "2*$:meshParameters.waterRun*$:meshParameters.rWater/$:meshParameters.resolution";
+nl2        #calc "$nrReactor-$nrWater-$nl1-$ndOil";
+
+x1  #calc "$:meshParameters.rWater";
+x3  #calc "$x1 + $:meshParameters.l1";
+x5  #calc "$x3 + $:meshParameters.dOil";
+x7  #calc "$:meshParameters.rReactor";
+y0  #calc "0 - 2*$:meshParameters.waterRun*$:meshParameters.rWater";
+y4  #calc "0 - 1*$:meshParameters.oilRun*$:meshParameters.dOil";
+y8  #calc "0 + $:meshParameters.lReactor";
+
+vertices
+(
+    (0    $y0  0)   //0
+    ($x1  $y0  0)   //1
+    ($x1  0    0)   //2
+    ($x3  0    0)   //3
+    ($x3  $y4  0)   //4
+    ($x5  $y4  0)   //5
+    ($x5  0    0)   //6
+    ($x7  0    0)   //7
+    ($x7  $y8  0)   //8
+    ($x5  $y8  0)   //9
+    ($x3  $y8  0)   //10
+    ($x1  $y8  0)   //11
+    (0    $y8  0)   //12
+    // In z direction
+    (0    $y0  1)   //13
+    ($x1  $y0  1)   //14
+    ($x1  0    1)   //15
+    ($x3  0    1)   //16
+    ($x3  $y4  1)   //17
+    ($x5  $y4  1)   //18
+    ($x5  0    1)   //19
+    ($x7  0    1)   //20
+    ($x7  $y8  1)   //21
+    ($x5  $y8  1)   //22
+    ($x3  $y8  1)   //23
+    ($x1  $y8  1)   //24
+    (0    $y8  1)   //25
+    // Origin
+    (0    0    0)   //26
+    (0    0    1)   //27
+);
+
+blocks
+(
+    //Water inlet block
+    hex (0 1 2 26 13 14 15 27)    ($nrWater   $nlWater   1) simpleGrading (1 1 1)
+
+    //Oil inlet block
+    hex (4 5 6 3 17 18 19 16)     ($ndOil     $nlOil     1) simpleGrading (1 1 1)
+
+    //Main Reactor Block 1 - leftmost 
+    hex (26 2 11 12 27 15 24 25)  ($nrWater   $nlReactor 1) simpleGrading (1 1 1)
+ 
+     //Main Reactor Block 2
+    hex (2 3 10 11 15 16 23 24)   ($nl1       $nlReactor 1) simpleGrading (1 1 1)
+
+    //Main Reactor Block 3
+    hex (3 6 9 10 16 19 22 23)    ($ndOil     $nlReactor 1) simpleGrading (1 1 1)
+ 
+    //Main Reactor Block 4
+    hex (6 7 8 9 19 20 21 22)     ($nl2       $nlReactor 1)  simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    waterInlet
+    {
+        type patch;
+        faces
+        (
+            (13 0 1 14)
+        );
+    }
+
+    oilInlet
+    {
+        type patch;
+        faces
+        (
+            (17 4 5 18)
+        );
+    }
+
+
+    mainReactorOutlet
+    {
+        type patch;
+        faces
+        (
+            (24 11 12 25)
+            (23 10 11 24)
+            (22 9 10 23)
+            (21 8 9 22)
+        );
+    }
+
+    front
+    {
+       type symmetry;
+       faces
+       (
+           (27 15 24 25)
+           (15 16 23 24)
+           (16 19 22 23)
+           (19 20 21 22)
+           (13 14 15 27)
+           (17 18 19 16)
+       );
+     }
+
+    back
+    {
+        type symmetry;
+        faces
+        (
+           (2 26 12 11)
+           (3 2 11 10)
+           (6 3 10 9)
+           (7 6 9 8)
+           (1 0 26 2)
+           (5 4 3 6)                    
+        );
+    }
+
+    wall
+    {
+        type patch;
+        faces
+        (
+           (16 15 2 3)
+           (20 19 6 7)
+           (14 1 2 15)
+           (17 16 3 4)
+           (19 18 5 6)                    
+        );
+    }
+
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
